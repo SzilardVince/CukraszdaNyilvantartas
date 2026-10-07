@@ -1,6 +1,7 @@
 ﻿using CukraszdaNyilvantartas;
 
 List<Sutemeny> sutik = new List<Sutemeny>();
+double arak = 0;
 for (int i= 0; i < 4; i++)
 {
     Sutemeny aktualis = new Sutemeny();
@@ -13,6 +14,7 @@ for (int i= 0; i < 4; i++)
     aktualis.RaktaronDb = int.Parse(Console.ReadLine());
     Console.WriteLine("");
     sutik.Add(aktualis);
+    arak += sutik[i].Egysegar;
 }
 int osszeg = 0;
 int teljes=0;
@@ -23,3 +25,6 @@ for (int i = 0; i < listdb; i++)
     Console.WriteLine($"{sutik[i].Nev}: {sutik[i].Egysegar} FT  / db({sutik[i].RaktaronDb}db)->Összérték: {sutik[i].Egysegar * sutik[i].RaktaronDb}");
     teljes += osszeg;
 }
+double atlag = arak / listdb;
+Console.WriteLine($"\nPult teljes készletértéke: {osszeg} Ft");
+Console.WriteLine($"Sütemények átlagos egységára: {atlag} Ft");
