@@ -23,8 +23,23 @@ Console.WriteLine("Pultban lévő sütemények");
 for (int i = 0; i < listdb; i++)
 {
     Console.WriteLine($"{sutik[i].Nev}: {sutik[i].Egysegar} FT  / db({sutik[i].RaktaronDb}db)->Összérték: {sutik[i].Egysegar * sutik[i].RaktaronDb}");
-    teljes += osszeg;
+    teljes += (sutik[i].Egysegar * sutik[i].RaktaronDb);
 }
 double atlag = arak / listdb;
-Console.WriteLine($"\nPult teljes készletértéke: {osszeg} Ft");
+Console.WriteLine($"\nPult teljes készletértéke: {teljes} Ft");
 Console.WriteLine($"Sütemények átlagos egységára: {atlag} Ft");
+string status ="";
+if(teljes>=40000)
+{
+    status = "Bőséges kínálat!";
+}
+else if (teljes>=20000)
+{
+    status = "Átlagos feltöltöttség.";
+}
+else
+{
+    status = "Alacsony készlet, utántöltés szükséges!";
+
+}
+Console.WriteLine($"Készlet státusza: {status}");
