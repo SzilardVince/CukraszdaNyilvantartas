@@ -14,3 +14,12 @@ for (int i= 0; i < 4; i++)
     Console.WriteLine("");
     sutik.Add(aktualis);
 }
+int osszeg = 0;
+int teljes=0;
+int listdb = sutik.Count;
+Console.WriteLine("Pultban lévő sütemények");
+for (int i = 0; i < listdb; i++)
+{
+    Console.WriteLine($"{sutik[i].Nev}: {sutik[i].Egysegar} FT  / db({sutik[i].RaktaronDb}db)->Összérték: {sutik[i].Egysegar * sutik[i].RaktaronDb}");
+    teljes += osszeg;
+}
